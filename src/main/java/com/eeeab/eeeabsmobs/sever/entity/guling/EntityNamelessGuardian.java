@@ -742,8 +742,7 @@ public class EntityNamelessGuardian extends EntityAbsGuling implements IBoss, Gl
                 return false;
             } else if (entity != null) {
                 if (this.isPowered()) {
-                    if (this.guardianInvulnerableTime <= 0) guardianInvulnerableTime = 25 /*不能小于等于10*/;
-                    if (ModEntityUtils.isProjectileSource(source)) return false;
+                    if (this.guardianInvulnerableTime <= 0) guardianInvulnerableTime = 0 /*不能小于等于10*/;
                 }
                 if (this.getAnimation() == WEAK_ANIMATION_2) {
                     maxHurtDamage = /* 如果伤害源是magic类型 则没有限制伤害,反之则受到最大伤害上限2倍伤害*/source.is(EMTagKey.MAGIC_UNRESISTANT_TO) ? damage : getMaxHealth() * (maximumDamageCap * 2);
