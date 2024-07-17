@@ -746,8 +746,7 @@ public class EntityNamelessGuardian extends EntityAbsGuling implements IBoss, Gl
                 return false;
             } else if (entity != null) {
                 if (this.isPowered()) {
-                    if (this.guardianInvulnerableTime <= 0) guardianInvulnerableTime = 20 /*不能小于等于10*/;
-                    if (ModEntityUtils.isProjectileSource(source)) return false;
+                    if (this.guardianInvulnerableTime <= 0) guardianInvulnerableTime = 0 /*不能小于等于10*/;
                 }
                 damage = Math.min(damage, EMConfigHandler.COMMON.MOB.GULING.NAMELESS_GUARDIAN.maximumDamageCap.damageCap.get().floatValue());
                 return super.hurt(source, damage);
